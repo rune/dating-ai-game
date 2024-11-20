@@ -1,0 +1,313 @@
+@font-face {
+  font-family: "Luck";
+  src: url("./assets/LuckiestGuy-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Boo";
+  src: url("./assets/Boogaloo-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#page {
+  background-image: url(assets/background.png);
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#logo {
+  background-image: url(assets/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50vw;
+  height: 18vh;
+  top: 2vh;
+  right: 0;
+  position: absolute;
+}
+
+.topLeft {
+  width: 20vw;
+  height: 25vw;
+  max-height: 125px;
+  max-width: 100px;
+  top: 1vh;
+  left: 5vw;
+  position: absolute;
+  font-size: 2vh;
+}
+
+.embedAvatar {
+  width: 15vw;
+  height: 19.5vw;
+  max-height: 62.5px;
+  max-width: 50px;
+  font-size: 2vh;
+}
+
+#playerAvatar {
+  position: absolute;
+  bottom: 0;
+  right: 10vw;
+  bottom: 50vh;
+}
+
+#computerAvatar {
+  position: absolute;
+  bottom: 0;
+  left: 10vw;
+  bottom: 12vh;
+}
+
+.avatar {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.playerAvatarEmbed {
+  width: 100%;
+}
+
+.embedAvatarText {
+  max-height: 62.5px;
+  max-width: 50px;
+  width: 10vw;
+  height: 5vh;
+  bottom: -20%;
+  right: 0%;
+  transform: rotate(-7deg);
+  position: absolute;
+  color: white;
+  font-family: "Luck";
+  text-align: center;
+  text-shadow:
+    3px 3px 0 #000,
+    -3px 3px 0 #000,
+    -3px -3px 0 #000,
+    3px -3px 0 #000;
+}
+
+.avatarText {
+  width: 20vw;
+  height: 5vh;
+  bottom: -15%;
+  right: -40%;
+  transform: rotate(-7deg);
+  position: absolute;
+  color: white;
+  font-family: "Luck";
+  text-align: center;
+  text-shadow:
+    3px 3px 0 #000,
+    -3px 3px 0 #000,
+    -3px -3px 0 #000,
+    3px -3px 0 #000;
+}
+
+.bubble {
+  font-family: "Boo";
+  color: black;
+  font-size: 2.3vh;
+}
+
+.bottomBubble {
+  width: 90vw;
+  height: 30vh;
+  top: 50vh;
+  left: 5vw;
+  position: absolute;
+
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.bottomBubble div {
+  padding-top: 5vh;
+  padding-left: 8vw;
+  padding-right: 10vw;
+}
+
+.bigBubble {
+  width: 90vw;
+  height: 40vh;
+  top: 15vh;
+  left: 5vw;
+  position: absolute;
+
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.bigBubble div {
+  padding-top: 11vh;
+  padding-left: 8vw;
+  padding-right: 10vw;
+}
+
+.smallBubble {
+  width: 90vw;
+  height: 25vh;
+  top: 15vh;
+  left: 5vw;
+  position: absolute;
+
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#playerInput {
+  font-family: "Boo";
+  font-size: 3vh;
+  width: 74vw;
+  position: absolute;
+  height: 20vh;
+  left: 5vw;
+  top: 45vh;
+  background: rgba(0,0,0,0.7);
+  border: 0;
+  outline: 0;
+  border-radius: 8vw;
+  resize: none;
+  color: white;
+  padding: 8vw;
+}
+
+.smallBubble div {
+  padding-top: 8vh;
+  padding-left: 8vw;
+  padding-right: 10vw;
+}
+
+.bubbleSmallRedUp {
+  background-image: url(assets/bubble-red-up-small.png);
+}
+
+.bubbleRedUp {
+  background-image: url(assets/bubble-red-up.png);
+}
+.bubbleRedDown {
+  background-image: url(assets/bubble-red-down.png);
+}
+
+.bubbleYellowDown {
+  background-image: url(assets/bubble-yellow-down.png);
+}
+.bubbleYellowUp {
+  background-image: url(assets/bubble-yellow-up.png);
+}
+
+.bubbleBlueDown {
+  top: 20vh;
+  background-image: url(assets/bubble-blue-down.png);
+}
+
+.bubbleBlueDown div {
+  padding-top: 4vh;
+}
+
+.bigButton {
+  background-image: url(assets/button.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 120vw;
+  height: 16vh;
+  position: absolute;
+  bottom: 0;
+  left: -10vw;
+  color: white;
+  font-family: "Luck";
+  font-size: 5vh;
+  text-align: center;
+  padding-top: 6.5vh;
+}
+
+#timer {
+  width: 90vw;
+  height: 15vh;
+  position: absolute;
+  left: 5vw;
+  bottom: 0;
+}
+
+#timerLogo {
+  background-image: url(assets/clock.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 15vh;
+  width: 15vh;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#timerBackground {
+  width: 80%;
+  height: 30%;
+  top: 55%;
+  left: 5vh;
+  transform: translate(0, -50%);
+  position: absolute;
+  background: #727272;
+  border-radius: 3vh;
+  overflow: hidden;
+}
+
+#timerBar {
+  width: 50%;
+  height: 100%;
+  background: #00C414; 
+}
+
+#timerHighlight {
+  position: absolute;
+  top: 10%;
+  width: 90%;
+  height: 10%;
+  background: rgba(255,255,255,0.4);
+
+}
+
+.femaleAvatar {
+  background-image: url(assets/avatar-female.png);
+}
+
+.maleAvatar {
+  background-image: url(assets/avatar-avatar.png);
+}
+
+.hostAvatar {
+  background-image: url(assets/avatar-host.png);
+}
+
+.screen {
+  opacity: 0
+}
+
+.enabled {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.off {
+  pointer-events: none;
+  opacity: 0;
+}

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <title>Dating AI Game</title>
+  </head>
+  <body>
+    <div id="page">
+      <div id="intro" class="screen off">
+        <div class="topLeft avatar hostAvatar">
+          <div class="avatarText">Buzz<br />Sparks</div>
+        </div>
+        <div class="bubble bigBubble bubbleYellowUp">
+          <div>
+            Welcome back to another edition of the Dating AI Game - with me,
+            Buzz Sparks. This is the dating game where potential partners win
+            big dates!
+            <p>
+              Without further ado, lets meet our lucky dater looking for love..
+              Rhea Cursive. Tell us a bit about yourself!
+            </p>
+          </div>
+        </div>
+        <div id="nextButton" class="bigButton">Next</div>
+      </div>
+      <div id="contestantIntroScreen" class="screen off">
+        <div class="topLeft avatar femaleAvatar">
+          <div class="avatarText">Rhea<br />Cursive</div>
+        </div>
+        <div class="bubble bigBubble bubbleRedUp">
+          <div>
+            Hi, I’m Rhea Cursive! I may be artificial, but my feelings are
+            real…ly well-programmed! I run on coffee algorithms and bad
+            rom-coms, and I’m here to find a partner who’s ready to download
+            love at first byte.
+            <p>If you’re into smart wit and firmware updates, let’s sync up!</p>
+          </div>
+        </div>
+        <div id="nextButton" class="bigButton">Let's Start Dating</div>
+      </div>
+      <div id="questionScreen" class="screen off">
+        <div class="topLeft avatar femaleAvatar">
+          <div class="avatarText">Rhea<br />Cursive</div>
+        </div>
+        <div class="bubble smallBubble bubbleSmallRedUp">
+          <div>
+            If you were a book, what would your title be—and what would I find
+            in your plot twist?
+          </div>
+        </div>
+        <textarea
+          id="playerInput"
+          placeholder="enter your answer here"
+        ></textarea>
+        <div id="timer">
+          <div id="timerBackground">
+            <div id="timerBar"></div>
+            <div id="timerHighlight"></div>
+          </div>
+          <div id="timerLogo"></div>
+        </div>
+      </div>
+      <div id="answerScreen" class="screen off">
+        <div class="topLeft avatar femaleAvatar">
+          <div class="avatarText">Rhea<br />Cursive</div>
+        </div>
+        <div class="bubble smallBubble bubbleBlueDown">
+          <div>“Restart My Heart” – When all seems wrong, just restart!</div>
+        </div>
+        <div id="playerAvatar" class="embedAvatar avatar">
+          <img
+            id="playerAvatarImage"
+            class="playerAvatarEmbed"
+            src="https://developers.rune.ai/img/avatar-placeholder.png"
+          />
+          <div class="embedAvatarText">Player</div>
+        </div>
+        <div class="bubble bottomBubble bubbleRedDown">
+          <div>
+            Whoa, yeah Restart my heart, give it a start. Whoa, yeah, baby Whoa,
+            yeah. Restart my heart, hope it never stops. Whoa, yeah, baby
+          </div>
+        </div>
+        <div id="computerAvatar" class="embedAvatar avatar femaleAvatar">
+          <div class="avatarText">Rhea<br />Cursive</div>
+        </div>
+      </div>
+      <div id="summaryScreen" class="screen off">
+        <div class="topLeft avatar hostAvatar">
+          <div class="avatarText">Buzz<br />Sparks</div>
+        </div>
+        <div class="bubble bigBubble bubbleYellowUp">
+          <div>
+            Now the big question will it be:
+            <p>cokeandcode - the master of nothing who likes to eat grass</p>
+            <p>shane - the artist of love</p>
+            <p>bjarke - a pizza fan who would take you dinner</p>
+          </div>
+        </div>
+      </div>
+      <div id="resultScreen" class="screen enabled">
+        <div class="topLeft avatar femaleAvatar">
+          <div class="avatarText">Rhea<br />Cursive</div>
+        </div>
+        <div class="bubble smallBubble bubbleSmallRedUp">
+          <div>
+            Well Buzz, I think I’m going to go with shane - he just seems to get
+            me!
+          </div>
+        </div>
+
+        <div class="bubble bottomBubble bubbleYellowDown">
+          <div>
+            Congrats! You’ve won a Virtual Neon Night Out: hoverboard ride
+            through a city skyline, a 3D beach dinner, and a sunset simulator
+            for that perfect glow. End the night with a custom love song from
+            our AI!
+          </div>
+        </div>
+        <div id="computerAvatar" class="embedAvatar avatar hostAvatar">
+          <div class="embedAvatarText">Buzz<br />Sparks</div>
+        </div>
+      </div>
+    </div>
+    <div id="logo"></div>
+    <script type="module" src="/src/logic.ts"></script>
+    <script type="module" src="/src/client.ts"></script>
+  </body>
+</html>
