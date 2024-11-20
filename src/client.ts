@@ -1,5 +1,11 @@
 import { PAUSE_PERIOD, QUESTION_PERIOD } from "./logic"
 import "./styles.css"
+import musicUrl from "./assets/music.mp3"
+
+const music = new Audio()
+music.src = musicUrl
+
+music.play()
 
 function div(id: string): HTMLDivElement {
   return document.getElementById(id) as HTMLDivElement
@@ -10,6 +16,7 @@ function textarea(id: string): HTMLTextAreaElement {
 
 div("nextButton").addEventListener("click", () => {
   Rune.actions.next()
+  music.play()
 })
 
 let currentScreen = "introScreen"

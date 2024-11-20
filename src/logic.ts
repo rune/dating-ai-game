@@ -5,6 +5,7 @@ type Prompt = { role: string; content: string }
 
 export const QUESTION_PERIOD = 1000 * 30
 export const PAUSE_PERIOD = 1000 * 15
+export const INTRO_PERIOD = 1000 * 10
 
 export interface GameState {
   playerNames: Record<string, string>
@@ -112,7 +113,7 @@ Rune.initLogic({
 
       game.responseIdsToShow = []
       if (game.startQuestionsTime === 0) {
-        game.startQuestionsTime = Rune.gameTime() + PAUSE_PERIOD
+        game.startQuestionsTime = Rune.gameTime() + INTRO_PERIOD
       }
       const lines = response.split("\n")
       for (const line of lines) {
