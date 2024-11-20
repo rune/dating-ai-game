@@ -32,7 +32,8 @@ Rune.initClient({
   onChange: ({ game, yourPlayerId }) => {
     // if the responses have finished and we've got summaries then
     // we've finished the game
-    if ((game.responseEndTime === 0 || Rune.gameTime() > game.responseEndTime) &&
+    if (
+      (game.responseEndTime === 0 || Rune.gameTime() > game.responseEndTime) &&
       Object.keys(game.playerSummaries).length > 0
     ) {
       // end state
