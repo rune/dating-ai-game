@@ -124,7 +124,6 @@ Rune.initLogic({
           game.dateText = line.substring("Date:".length)
         }
         if (line.startsWith("Question:")) {
-          console.log(line)
           game.questionCount++
           game.question = line.substring("Question:".length)
           game.questionEndTime = Rune.gameTime() + QUESTION_PERIOD
