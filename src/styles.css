@@ -233,6 +233,23 @@ body {
   padding-top: 6.5vh;
 }
 
+#thinkingMessage {
+  color: white;
+  font-family: "Luck";
+  text-shadow:
+    3px 3px 0 #000,
+    -3px 3px 0 #000,
+    -3px -3px 0 #000,
+    3px -3px 0 #000;
+  font-size: 5vh;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 70%;
+  text-align: center;
+}
+
 #timer {
   width: 90vw;
   height: 15vh;

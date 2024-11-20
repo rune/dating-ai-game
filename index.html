@@ -10,7 +10,7 @@
   </head>
   <body>
     <div id="page">
-      <div id="intro" class="screen off">
+      <div id="introScreen" class="screen enabled">
         <div class="topLeft avatar hostAvatar">
           <div class="avatarText">Buzz<br />Sparks</div>
         </div>
@@ -27,29 +27,27 @@
         </div>
         <div id="nextButton" class="bigButton">Next</div>
       </div>
+      <div id="thinkingScreen" class="screen off">
+        <div class="topLeft avatar femaleAvatar">
+          <div class="avatarText">Rhea<br />Cursive</div>
+        </div>
+        <div id="thinkingMessage">Rhea is thinking..</div>
+      </div>
       <div id="contestantIntroScreen" class="screen off">
         <div class="topLeft avatar femaleAvatar">
           <div class="avatarText">Rhea<br />Cursive</div>
         </div>
         <div class="bubble bigBubble bubbleRedUp">
-          <div>
-            Hi, I’m Rhea Cursive! I may be artificial, but my feelings are
-            real…ly well-programmed! I run on coffee algorithms and bad
-            rom-coms, and I’m here to find a partner who’s ready to download
-            love at first byte.
-            <p>If you’re into smart wit and firmware updates, let’s sync up!</p>
+          <div id="contestantIntroText">
           </div>
         </div>
-        <div id="nextButton" class="bigButton">Let's Start Dating</div>
       </div>
       <div id="questionScreen" class="screen off">
         <div class="topLeft avatar femaleAvatar">
           <div class="avatarText">Rhea<br />Cursive</div>
         </div>
         <div class="bubble smallBubble bubbleSmallRedUp">
-          <div>
-            If you were a book, what would your title be—and what would I find
-            in your plot twist?
+          <div id="questionText">
           </div>
         </div>
         <textarea
@@ -69,7 +67,7 @@
           <div class="avatarText">Rhea<br />Cursive</div>
         </div>
         <div class="bubble smallBubble bubbleBlueDown">
-          <div>“Restart My Heart” – When all seems wrong, just restart!</div>
+          <div id="answerText"></div>
         </div>
         <div id="playerAvatar" class="embedAvatar avatar">
           <img
@@ -77,12 +75,10 @@
             class="playerAvatarEmbed"
             src="https://developers.rune.ai/img/avatar-placeholder.png"
           />
-          <div class="embedAvatarText">Player</div>
+          <div id="playerNameText" class="embedAvatarText"></div>
         </div>
-        <div class="bubble bottomBubble bubbleRedDown">
-          <div>
-            Whoa, yeah Restart my heart, give it a start. Whoa, yeah, baby Whoa,
-            yeah. Restart my heart, hope it never stops. Whoa, yeah, baby
+        <div id="computerResponse" class="bubble bottomBubble bubbleRedDown">
+          <div id="responseText">
           </div>
         </div>
         <div id="computerAvatar" class="embedAvatar avatar femaleAvatar">
@@ -94,31 +90,21 @@
           <div class="avatarText">Buzz<br />Sparks</div>
         </div>
         <div class="bubble bigBubble bubbleYellowUp">
-          <div>
-            Now the big question will it be:
-            <p>cokeandcode - the master of nothing who likes to eat grass</p>
-            <p>shane - the artist of love</p>
-            <p>bjarke - a pizza fan who would take you dinner</p>
+          <div id="summaryText">
           </div>
         </div>
       </div>
-      <div id="resultScreen" class="screen enabled">
+      <div id="resultScreen" class="screen off">
         <div class="topLeft avatar femaleAvatar">
           <div class="avatarText">Rhea<br />Cursive</div>
         </div>
         <div class="bubble smallBubble bubbleSmallRedUp">
-          <div>
-            Well Buzz, I think I’m going to go with shane - he just seems to get
-            me!
+          <div id="decisionText">
           </div>
         </div>
 
         <div class="bubble bottomBubble bubbleYellowDown">
-          <div>
-            Congrats! You’ve won a Virtual Neon Night Out: hoverboard ride
-            through a city skyline, a 3D beach dinner, and a sunset simulator
-            for that perfect glow. End the night with a custom love song from
-            our AI!
+          <div id="dateText">
           </div>
         </div>
         <div id="computerAvatar" class="embedAvatar avatar hostAvatar">
