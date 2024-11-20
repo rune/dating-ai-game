@@ -3,8 +3,8 @@ import { INTRO_PROMPT, runPrompt } from "./prompt"
 
 type Prompt = { role: string; content: string }
 
-export const QUESTION_PERIOD = 1000 * 10; // testing 30
-export const PAUSE_PERIOD = 1000 * 10
+export const QUESTION_PERIOD = 1000 * 30
+export const PAUSE_PERIOD = 1000 * 15
 
 export interface GameState {
   playerNames: Record<string, string>

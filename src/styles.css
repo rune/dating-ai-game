@@ -139,6 +139,17 @@ body {
   padding-right: 10vw;
 }
 
+.bigBubbleBigger {
+  width: 90vw;
+  height: 75vh;
+  top: 15vh;
+  left: 5vw;
+  position: absolute;
+
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
 .bigBubble {
   width: 90vw;
   height: 40vh;
@@ -148,6 +159,12 @@ body {
 
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+
+.bigBubbleBigger div {
+  padding-top: 11vh;
+  padding-left: 8vw;
+  padding-right: 10vw;
 }
 
 .bigBubble div {
@@ -206,6 +223,9 @@ body {
 }
 .bubbleYellowUp {
   background-image: url(assets/bubble-yellow-up.png);
+}
+.bubbleYellowUpBig {
+  background-image: url(assets/bubble-yellow-up-big.png);
 }
 
 .bubbleBlueDown {
