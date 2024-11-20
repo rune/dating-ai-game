@@ -1,28 +1,6 @@
-# Getting Started with Rune
+# Dating AI Game
 
-### `npm run dev`
+The second in the series of 7 AI games in 7 days written for the [Rune](https://rune.ai) games app.
 
-Runs the game in Dev UI.
+<img width="690" alt="image" src="https://github.com/user-attachments/assets/c7dacc88-9146-4cb3-ab29-da4b1f804d9b">
 
-The page will reload when you make changes.
-
-### `npm run upload`
-
-Builds the game and starts upload process to Rune.
-
-### `npm run build`
-
-Builds the game. You can then upload it to Rune using `npx rune@latest upload`.
-
-### `npm run lint`
-
-Runs the validation rules. You can read about them in the [docs on server-side logic](https://developers.rune.ai/docs/advanced/server-side-logic).
-
-### `npm run typecheck`
-
-Verifies that TypeScript is valid.
-
-
-## Learn More
-
-See the [Rune docs](https://developers.rune.ai/docs/quick-start) for more info. You can also ask any questions in the [Rune Discord](https://discord.gg/rune-devs), we're happy to help!
