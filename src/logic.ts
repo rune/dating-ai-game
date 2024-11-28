@@ -166,7 +166,7 @@ Rune.initLogic({
           const name = line.substring("Summary ".length, line.indexOf(":"))
           for (const playerId of allPlayerIds) {
             if (
-              game.playerNames[playerId].trim().toLowerCase() ===
+              (game.playerNames[playerId]?.trim().toLowerCase() ?? "") ===
               name.trim().toLowerCase()
             ) {
               game.playerSummaries[playerId] = line.substring(
@@ -179,7 +179,7 @@ Rune.initLogic({
           const name = line.substring("Response ".length, line.indexOf(":"))
           for (const playerId of allPlayerIds) {
             if (
-              game.playerNames[playerId].trim().toLowerCase() ===
+              (game.playerNames[playerId]?.trim().toLowerCase() ?? "") ===
               name.trim().toLowerCase()
             ) {
               game.aiResponses[playerId] = line.substring(line.indexOf(":") + 1)

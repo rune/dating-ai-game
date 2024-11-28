@@ -5,6 +5,7 @@ import musicUrl from "./assets/music.mp3"
 const music = new Audio()
 music.src = musicUrl
 
+music.loop = true
 music.play()
 
 function div(id: string): HTMLDivElement {
@@ -42,7 +43,10 @@ function showScreen(screen: string) {
 }
 
 Rune.initClient({
-  onChange: ({ game, yourPlayerId }) => {
+  onChange: ({ game, yourPlayerId, event }) => {
+    if (event && event.name === "stateSync" && event.isNewGame) {
+      showScreen("introScreen")
+    }
     // if the responses have finished and we've got summaries then
     // we've finished the game
     if (
