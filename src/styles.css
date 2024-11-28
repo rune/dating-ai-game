@@ -253,6 +253,10 @@ body {
   padding-top: 6.5vh;
 }
 
+#doneButton {
+  bottom: 5vh;
+}
+
 #thinkingMessage {
   color: white;
   font-family: "Luck";

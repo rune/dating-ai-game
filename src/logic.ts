@@ -1,4 +1,4 @@
-import type { RuneClient } from "rune-sdk"
+import type { GameOverResult, PlayerId, RuneClient } from "rune-sdk"
 import { INTRO_PROMPT, runPrompt } from "./prompt"
 
 type Prompt = { role: string; content: string }
@@ -28,11 +28,15 @@ export interface GameState {
   questionCount: number
   showResultTime: number
   startQuestionsTime: number
+  gameOverAt: number
+  ready: Record<string, boolean>
+  winner: string
 }
 
 type GameActions = {
   answer: (params: { name: string; answer: string }) => void
   next: () => void
+  ready: () => void
 }
 
 declare global {
@@ -64,10 +68,13 @@ Rune.initLogic({
       questionCount: 0,
       showResultTime: 0,
       startQuestionsTime: 0,
+      gameOverAt: 0,
+      ready: {},
+      winner: "",
     }
   },
   updatesPerSecond: 10,
-  update: ({ game }) => {
+  update: ({ game, allPlayerIds }) => {
     // run an update loop for the timer
     if (
       game.playerAnswersDone &&
@@ -92,6 +99,20 @@ Rune.initLogic({
       game.startQuestionsTime = 0
       game.contestantIntroDone = true
       game.questionEndTime = Rune.gameTime() + QUESTION_PERIOD
+    }
+
+    if (game.showResultTime !== 0 && game.showResultTime < Rune.gameTime()) {
+      if (game.gameOverAt === 0) {
+        game.gameOverAt = Rune.gameTime() + PAUSE_PERIOD
+      }
+    }
+
+    if (game.gameOverAt !== 0 && game.gameOverAt < Rune.gameTime()) {
+      const options: Record<PlayerId, GameOverResult> = {}
+      for (const id of allPlayerIds) {
+        options[id] = game.winner === id ? "WON" : "LOST"
+      }
+      Rune.gameOver({ players: options })
     }
   },
   events: {
@@ -127,9 +148,19 @@ Rune.initLogic({
           game.questionCount++
           game.question = line.substring("Question:".length)
           game.questionEndTime = Rune.gameTime() + QUESTION_PERIOD
+          game.ready = {}
         }
         if (line.startsWith("Decision:")) {
           game.decisionText = line.substring("Decision:".length)
+          for (const id in game.playerNames) {
+            if (
+              game.decisionText
+                .toLowerCase()
+                .includes(game.playerNames[id].toLowerCase())
+            ) {
+              game.winner = id
+            }
+          }
         }
         if (line.startsWith("Summary ")) {
           const name = line.substring("Summary ".length, line.indexOf(":"))
@@ -162,6 +193,18 @@ Rune.initLogic({
     },
   },
   actions: {
+    ready: (_, { game, allPlayerIds, playerId }) => {
+      if (!game.ready[playerId]) {
+        game.ready[playerId] = true
+        for (const id of allPlayerIds) {
+          if (!game.ready[id]) {
+            return
+          }
+        }
+
+        game.questionEndTime = Rune.gameTime() + 1000
+      }
+    },
     next: (_, { game }) => {
       game.introDone = true
 

@@ -14,6 +14,12 @@ function textarea(id: string): HTMLTextAreaElement {
   return document.getElementById(id) as HTMLTextAreaElement
 }
 
+div("doneButton").addEventListener("click", () => {
+  div("doneButton").innerHTML = "READY!"
+  textarea("playerInput").disabled = true
+  Rune.actions.ready()
+})
+
 div("nextButton").addEventListener("click", () => {
   Rune.actions.next()
   music.play()
@@ -73,6 +79,8 @@ Rune.initClient({
         } else {
           if (currentScreen !== "questionScreen") {
             textarea("playerInput").value = ""
+            textarea("playerInput").disabled = false
+            div("doneButton").innerHTML = "SUBMIT"
           }
           showScreen("questionScreen")
         }
