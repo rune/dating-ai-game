@@ -3,7 +3,7 @@ import { INTRO_PROMPT, runPrompt } from "./prompt"
 
 type Prompt = { role: string; content: string }
 
-export const QUESTION_PERIOD = 1000 * 30
+export const QUESTION_PERIOD = 1000 * 60
 export const PAUSE_PERIOD = 1000 * 15
 export const INTRO_PERIOD = 1000 * 10
 
@@ -112,7 +112,7 @@ Rune.initLogic({
       for (const id of allPlayerIds) {
         options[id] = game.winner === id ? "WON" : "LOST"
       }
-      Rune.gameOver({ players: options })
+      Rune.gameOver({ players: options, minimizePopUp: true })
     }
   },
   events: {
